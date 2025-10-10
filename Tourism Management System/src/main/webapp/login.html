@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Global Explorers</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+   <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Global Explorers</a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="form-main">
+        <div class="form-container">
+            <h2>Welcome Back!</h2>
+            
+            <div id="error-message" style="color: red; margin-bottom: 15px; background-color: #ffebee; padding: 10px; border-radius: 8px; display: none;"></div>
+
+            <form action="LoginServlet" method="post">
+                <div class="input-group">
+                    <label for="loginIdentifier">Email or Username</label>
+                    <input type="text" id="loginIdentifier" name="loginIdentifier" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            
+            <p class="bottom-text">
+                Don't have an account? <a href="signup.html">Sign Up</a>
+            </p>
+        </div>
+    </main>
+    
+     <footer class="footer-section">
+        <div class="container">
+            <p>&copy; 2023 Global Explorers. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+   
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const error = params.get('error');
+        const errorDiv = document.getElementById('error-message');
+
+        if (error === 'invalid_credentials') {
+            errorDiv.textContent = 'Invalid username/email or password. Please try again.';
+            errorDiv.style.display = 'block';
+        }
+    });
+</script>
+</body>
+</html>

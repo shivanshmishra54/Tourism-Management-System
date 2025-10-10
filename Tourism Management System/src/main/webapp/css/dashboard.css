@@ -1,0 +1,178 @@
+/* Dashboard Specific Styles */
+body {
+    background-color: var(--light-bg);
+    display: flex; /* Flexbox for sidebar layout */
+}
+
+.sidebar {
+    width: 260px;
+    background: var(--dark-bg);
+    color: var(--light-text);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .profile {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #4b5563;
+}
+
+.sidebar .profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.sidebar .profile h3 {
+    color: var(--light-text);
+    margin: 10px 0 5px;
+}
+
+.sidebar .profile p {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
+
+.sidebar .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.sidebar .nav-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    color: var(--light-text);
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar .nav-menu li a:hover,
+.sidebar .nav-menu li a.active {
+    background: var(--primary-color);
+    color: var(--light-text);
+}
+
+.sidebar .nav-menu li a .icon {
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+.sidebar .logout-link {
+    padding: 20px 25px;
+    border-top: 1px solid #4b5563;
+}
+
+.sidebar .logout-link a {
+    color: var(--light-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.sidebar .logout-link a:hover {
+    color: var(--accent-color);
+}
+
+.main-content {
+    margin-left: 260px; /* Sidebar width */
+    width: calc(100% - 260px);
+    padding: 40px;
+}
+
+.main-content h1 {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    border-radius: var(--border-radius);
+    border: 1px solid #ddd;
+    margin-bottom: 40px;
+}
+
+/* === Updated Package Card Styles === */
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.package-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+}
+
+.package-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.package-card .card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.package-card h3 {
+    font-size: 1.6em;
+    text-align: left;
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.package-card .description {
+    color: var(--secondary-color);
+    font-size: 0.95em;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.package-card .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+.package-card .price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.package-card .duration {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.package-card .btn {
+    width: 100%;
+    text-align: center;
+}
